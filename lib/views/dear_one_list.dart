@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_rem/widgets/general_card.dart';
 
-class EntesQueridos extends StatelessWidget {
+class DearOneList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

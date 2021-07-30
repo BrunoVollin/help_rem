@@ -21,7 +21,15 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-class LoginBox extends StatelessWidget {
+class LoginBox extends StatefulWidget {
+  @override
+  _LoginBoxState createState() => _LoginBoxState();
+}
+
+class _LoginBoxState extends State<LoginBox> {
+  String email = "";
+  String password = "";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,7 +72,7 @@ class LoginBox extends StatelessWidget {
                       style: TextStyle(fontSize: 20),
                     ),
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/entes');
+                      Navigator.of(context).pushNamed('/dear_one_list');
                     },
                   ),
                   TextButton(
