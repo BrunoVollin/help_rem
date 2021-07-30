@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_rem/views/entes_queridos.dart';
+import 'package:help_rem/views/dear_one_list.dart';
+import 'package:help_rem/views/dear_one_specific.dart';
 import 'package:help_rem/views/login_page.dart';
 
 main() {
@@ -23,7 +24,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var themeData = ThemeData(
-      primarySwatch: MaterialColor(0xFF4B98B5, color),
+      primarySwatch: MaterialColor(0xff4B98B5, color),
     );
 
     return MaterialApp(
@@ -32,7 +33,8 @@ class AppWidget extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => LoginPage(),
-          '/entes': (context) => EntesQueridos(),
+          '/dear_one_list': (context) => DearOneList(),
+          '/dear_one_specific': (context) => DearOneSpecific(),
         });
   }
 }
