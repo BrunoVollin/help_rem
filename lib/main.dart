@@ -1,30 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:help_rem/theme/blue.dart';
+import 'package:help_rem/views/create_account_page.dart';
 import 'package:help_rem/views/dear_one_list.dart';
 import 'package:help_rem/views/dear_one_specific.dart';
 import 'package:help_rem/views/login_page.dart';
+import 'package:help_rem/views/menu_page.dart';
 
 main() {
   runApp(AppWidget());
 }
 
 class AppWidget extends StatelessWidget {
-  Map<int, Color> color = {
-    50: Color.fromRGBO(51, 153, 255, .1),
-    100: Color.fromRGBO(51, 153, 255, .2),
-    200: Color.fromRGBO(51, 153, 255, .3),
-    300: Color.fromRGBO(51, 153, 255, .4),
-    400: Color.fromRGBO(51, 153, 255, .5),
-    500: Color.fromRGBO(51, 153, 255, .6),
-    600: Color.fromRGBO(51, 153, 255, .7),
-    700: Color.fromRGBO(51, 153, 255, .8),
-    800: Color.fromRGBO(51, 153, 255, .9),
-    900: Color.fromRGBO(51, 153, 255, 1),
-  };
-
   @override
   Widget build(BuildContext context) {
     var themeData = ThemeData(
-      primarySwatch: MaterialColor(0xff4B98B5, color),
+      primarySwatch: blueTheme(),
     );
 
     return MaterialApp(
@@ -35,6 +25,7 @@ class AppWidget extends StatelessWidget {
           '/': (context) => LoginPage(),
           '/dear_one_list': (context) => DearOneList(),
           '/dear_one_specific': (context) => DearOneSpecific(),
+          '/create_account_page': (context) => CreateAccount(),
         });
   }
 }

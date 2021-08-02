@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:help_rem/widgets/blue_button.dart';
+import 'package:help_rem/widgets/blue_text_field.dart';
+import 'package:help_rem/widgets/incorrect_login.dart';
+import 'package:help_rem/widgets/outline_blue_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -30,6 +34,31 @@ class _LoginBoxState extends State<LoginBox> {
   String email = "";
   String password = "";
 
+  loginCheck(email, password) {
+    bool result = email == "b" && password == "123";
+
+    return result;
+  }
+
+  onClickLogIn() {
+    if (loginCheck(email, password)) {
+      Navigator.of(context).pushNamed('/dear_one_list');
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) => IncorrectLogin(),
+        barrierDismissible: false,
+      );
+    }
+  }
+
+  onClickCreateAccount() {
+    Navigator.of(context).pushNamed('/create_account_page');
+  }
+
+  // TextEditingController _emailInputController = TextEditingController as TextEditingController ;
+  // TextEditingController _passwordInputController = TextEditingController as TextEditingController ;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,42 +75,28 @@ class _LoginBoxState extends State<LoginBox> {
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextField(
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Email',
-                        labelStyle: TextStyle(fontSize: 20)),
-                  ),
+                  BlueTextField(
+                      onChange: (text) {
+                        email = text;
+                      },
+                      text: "Email"),
                   SizedBox(height: 8),
                   TextField(
-                    keyboardType: TextInputType.text,
+                    obscureText: true,
+                    onChanged: (text) {
+                      password = text;
+                    },
+                    keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Senha',
                       labelStyle: TextStyle(fontSize: 20),
                     ),
                   ),
-                  SizedBox(height: 15),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(350, 50)),
-                    ),
-                    child: Text(
-                      'Entrar',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed('/dear_one_list');
-                    },
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Esqueceu sua senha?',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  )
+                  SizedBox(height: 16),
+                  BlueButton("Entrar", onClickLogIn),
+                  SizedBox(height: 8),
+                  OutlineBlueButton("Criar Conta", onClickCreateAccount),
                 ],
               ),
             ),
