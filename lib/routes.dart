@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_rem/theme/blue.dart';
 import 'package:help_rem/views/create_account_page.dart';
+import 'package:help_rem/views/create_food.dart';
 import 'package:help_rem/views/dear_one_create.dart';
 import 'package:help_rem/views/dear_one_list.dart';
 import 'package:help_rem/views/dear_one_specific.dart';
@@ -30,6 +31,7 @@ class Routes extends StatelessWidget {
           '/medicine_page': (context) => MedicinePage(),
           '/create_medicine': (context) => CreateMedicine(),
           '/food_page': (context) => FoodPage(),
+          '/create_food':(context) => CreateFood()
         });
   }
 }
