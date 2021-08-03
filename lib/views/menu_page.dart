@@ -70,7 +70,7 @@ class MenuPageBox extends StatelessWidget {
                   ),
                   SizedBox(height: 6),
                   MenuButton(
-                    route: '',
+                    route: '/food_page',
                     text: "Alimentos",
                     icon: Icons.restaurant,
                   ),
