@@ -16,7 +16,7 @@ class MedicinePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () =>
-                  Navigator.of(context).pushNamed('/create_dear_one'),
+                  Navigator.of(context).pushNamed('/create_medicine'),
               icon: Icon(Icons.add, size: 40, color: Color(0xff4B98B5)))
         ],
         title: Text(

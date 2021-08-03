@@ -68,6 +68,12 @@ class MenuPageBox extends StatelessWidget {
                     text: "Atividades Físicas",
                     icon: Icons.directions_bike,
                   ),
+                  SizedBox(height: 6),
+                  MenuButton(
+                    route: '',
+                    text: "Alimentos",
+                    icon: Icons.restaurant,
+                  ),
                 ],
               ),
             ),

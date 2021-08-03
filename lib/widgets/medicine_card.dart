@@ -11,9 +11,6 @@ class MedicineCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).pushNamed('/dear_one_specific');
-      },
       child: Center(
         child: Container(
           child: Padding(
@@ -25,26 +22,20 @@ class MedicineCard extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        CircleAvatar(
-                          backgroundImage: NetworkImage(image),
-                          radius: 45,
-                        ),
-                        Text(
-                          name,
-                          style:
-                              TextStyle(color: Color(0xFF4B98B5), fontSize: 30),
-                        ),
-                      ],
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(image),
+                      radius: 70,
+                    ),
+                    Text(
+                      name,
+                      style: TextStyle(color: Color(0xFF4B98B5), fontSize: 30),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(height: 20),
                         Text("Horario: $time", style: TextStyle(fontSize: 20)),
-                        Text("Quantidade: $amount ",
+                        Text("Quantidade: $amount",
                             style: TextStyle(fontSize: 20)),
                       ],
                     )
