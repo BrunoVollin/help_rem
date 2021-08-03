@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
-  final Function onClick;
+  final String route;
   final String text;
   final IconData icon;
 
   const MenuButton(
-      {required this.onClick, required this.text, required this.icon});
+      {required this.route, required this.text, required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () => onClick,
+      onPressed: () => Navigator.of(context).pushNamed(route),
       style: ButtonStyle(
         minimumSize: MaterialStateProperty.all(Size(355, 100)),
       ),

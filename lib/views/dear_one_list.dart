@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_rem/widgets/general_card.dart';
+import 'package:help_rem/widgets/dear_card.dart';
 
 class DearOneList extends StatelessWidget {
   @override
@@ -12,7 +12,12 @@ class DearOneList extends StatelessWidget {
           icon: Icon(Icons.arrow_back, color: Color(0xff4B98B5)),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: [Icon(Icons.add, size: 40, color: Color(0xff4B98B5))],
+        actions: [
+          IconButton(
+              onPressed: () =>
+                  Navigator.of(context).pushNamed('/create_dear_one'),
+              icon: Icon(Icons.add, size: 40, color: Color(0xff4B98B5)))
+        ],
         title: Text(
           "Entes Queridoss",
           style: TextStyle(
@@ -25,11 +30,12 @@ class DearOneList extends StatelessWidget {
         color: Color(0xffE1E1E1),
         child: ListView(
           children: [
-            GeneralCard(),
-            GeneralCard(),
-            GeneralCard(),
-            GeneralCard(),
-            GeneralCard(),
+            SizedBox(height: 5),
+            DearCard(),
+            DearCard(),
+            DearCard(),
+            DearCard(),
+            DearCard(),
           ],
         ),
       ),

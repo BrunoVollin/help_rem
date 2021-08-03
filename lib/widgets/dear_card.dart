@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class GeneralCard extends StatelessWidget {
+class DearCard extends StatelessWidget {
   String image =
       'https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg';
 
@@ -19,7 +19,7 @@ class GeneralCard extends StatelessWidget {
         child: Container(
           child: Padding(
             // padding: const EdgeInsets.all(10.0),
-            padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0.0),
+            padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 0),
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),

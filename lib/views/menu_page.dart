@@ -37,21 +37,34 @@ class MenuPageBox extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
-                  Text("Bem vindo", style: TextStyle(fontSize: 30),),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Text(
+                      "Bem Vindo",
+                      style: TextStyle(fontSize: 30, color: Colors.black54),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      "Aperte a opção que deseja.",
+                      style: TextStyle(fontSize: 23, color: Colors.black54),
+                    ),
+                  ),
                   MenuButton(
-                    onClick: () {},
-                    text: "Entes Queridoss",
+                    route: '/dear_one_list',
+                    text: "Entes Queridos",
                     icon: Icons.group,
                   ),
                   SizedBox(height: 6),
                   MenuButton(
-                    onClick: () {},
+                    route: '',
                     text: "Remedios",
-                    icon: Icons.medical_services,          
+                    icon: Icons.medical_services,
                   ),
                   SizedBox(height: 6),
                   MenuButton(
-                    onClick: () {},
+                    route: '',
                     text: "Atividades Físicas",
                     icon: Icons.directions_bike,
                   ),

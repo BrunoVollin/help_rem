@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:help_rem/widgets/blue_button.dart';
 import 'package:help_rem/widgets/blue_text_field.dart';
 import 'package:help_rem/widgets/blue_text_field_multiline.dart';
 
@@ -55,6 +56,7 @@ class CreateAccountBox extends StatelessWidget {
                   SizedBox(height: 8),
                   BlueTextFieldMultiline(
                       onChange: () {}, text: "Sobre a Pessoa"),
+                  BlueButton("Adicionar Foto", () {})
                 ],
               ),
             ),
