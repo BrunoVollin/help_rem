@@ -58,7 +58,7 @@ class MenuPageBox extends StatelessWidget {
                   ),
                   SizedBox(height: 6),
                   MenuButton(
-                    route: '',
+                    route: '/medicine_page',
                     text: "Remedios",
                     icon: Icons.medical_services,
                   ),
