@@ -64,7 +64,7 @@ class MenuPageBox extends StatelessWidget {
                   ),
                   SizedBox(height: 6),
                   MenuButton(
-                    route: '',
+                    route: '/physical_activity_page',
                     text: "Atividades Físicas",
                     icon: Icons.directions_bike,
                   ),

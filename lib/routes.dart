@@ -10,6 +10,8 @@ import 'package:help_rem/views/login_page.dart';
 import 'package:help_rem/views/medicine_page.dart';
 import 'package:help_rem/views/medicine_page_create.dart';
 import 'package:help_rem/views/menu_page.dart';
+import 'package:help_rem/views/physical_activity_create..dart';
+import 'package:help_rem/views/physical_activity_page.dart';
 
 class Routes extends StatelessWidget {
   @override
@@ -31,7 +33,9 @@ class Routes extends StatelessWidget {
           '/medicine_page': (context) => MedicinePage(),
           '/create_medicine': (context) => CreateMedicine(),
           '/food_page': (context) => FoodPage(),
-          '/create_food':(context) => CreateFood()
+          '/create_food':(context) => CreateFood(),
+          '/physical_activity_page':(context) => PhysicalActivity(),
+          '/physical_activity_create':(context) => PhysicalActivityCreate(),
         });
   }
 }
