@@ -6,7 +6,7 @@ class EntesQueridos {
   final String telefone;
   final String imagem;
 
-  EntesQueridos(
+  const EntesQueridos(
       {required this.id,
       required this.parentesco,
       required this.nome,
