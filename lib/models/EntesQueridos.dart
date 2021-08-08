@@ -1,5 +1,5 @@
 class EntesQueridos {
-  final int id;
+  final String id;
   final String parentesco;
   final String nome;
   final int idade;

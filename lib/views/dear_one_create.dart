@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:help_rem/models/EntesQueridos.dart';
+import 'package:help_rem/provider/entesprovider.dart';
 import 'package:help_rem/widgets/blue_button.dart';
 import 'package:help_rem/widgets/blue_text_field.dart';
 import 'package:help_rem/widgets/blue_text_field_multiline.dart';
+import 'package:provider/provider.dart';
 
 class CreateDearOne extends StatelessWidget {
   @override
@@ -29,7 +32,34 @@ class CreateDearOne extends StatelessWidget {
   }
 }
 
-class CreateDearOneBox extends StatelessWidget {
+class CreateDearOneBox extends StatefulWidget {
+  @override
+  _CreateDearOneBoxState createState() => _CreateDearOneBoxState();
+}
+
+class _CreateDearOneBoxState extends State<CreateDearOneBox> {
+  late EntesQueridos ente;
+
+  String name = "";
+  String phone = "";
+  String kinship = "";
+  String about = "";
+  int age = 0;
+
+  createLovedOne(context) {
+    Provider.of<EntesProvider>(context, listen: false).put(
+      EntesQueridos(
+          id: '3',
+          parentesco: kinship,
+          nome: name,
+          idade: age,
+          telefone: phone,
+          imagem: ''),
+    );
+
+    Navigator.of(context).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,20 +74,62 @@ class CreateDearOneBox extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
-                  BlueTextField(onChange: () {}, text: "Nome"),
+                  BlueTextField(
+                      onChange: (info) {
+                        name = info;
+                      },
+                      text: "Nome"),
                   SizedBox(height: 8),
-                  BlueTextField(onChange: () {}, text: "Senha"),
+                  BlueTextField(
+                      onChange: (info) {
+                        kinship = info;
+                      },
+                      text: "Parentesco"),
                   SizedBox(height: 8),
-                  BlueTextField(onChange: () {}, text: "Endereço"),
+                  BlueTextField(
+                      onChange: (info) {
+                        phone = info;
+                      },
+                      text: "Telefone"),
                   SizedBox(height: 8),
-                  BlueTextField(onChange: () {}, text: "Telefone"),
+                  BlueTextField(
+                      onChange: (info) {
+                        age = info;
+                      },
+                      text: "Idade"),
                   SizedBox(height: 8),
                   BlueTextFieldMultiline(
-                      onChange: () {}, text: "Sobre a Pessoa"),
+                      onChange: (info) {
+                        about = info;
+                      },
+                      text: "Sobre a Pessoa"),
                   SizedBox(height: 8),
                   BlueButton("Adicionar Foto", () {}),
                   SizedBox(height: 16),
-                  BlueButton("Criar Ente", () {})
+                  BlueButton("Criar Ente", () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: Text("Alerta"),
+                        content: Text("Deseja Criar o Ente ?"),
+                        actions: [
+                          TextButton(
+                            child: Text("OK"),
+                            onPressed: () {
+                              createLovedOne(context);
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                          TextButton(
+                            child: Text("Cancelar"),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          )
+                        ],
+                      ),
+                    );
+                  })
                 ],
               ),
             ),
