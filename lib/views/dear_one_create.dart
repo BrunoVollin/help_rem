@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:help_rem/models/EntesQueridos.dart';
 import 'package:help_rem/provider/entesprovider.dart';
 import 'package:help_rem/widgets/blue_button.dart';
 import 'package:help_rem/widgets/blue_text_field.dart';
 import 'package:help_rem/widgets/blue_text_field_multiline.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class CreateDearOne extends StatelessWidget {
@@ -46,6 +49,24 @@ class _CreateDearOneBoxState extends State<CreateDearOneBox> {
   String about = "";
   int age = 0;
 
+  XFile? image;
+
+  void getImageGalery() async {
+    final picker = ImagePicker();
+
+    try {
+      // ignore: deprecated_member_use
+      XFile? file = await picker.pickImage(source: ImageSource.gallery);
+      if (file != null) {
+        setState(() => image = file);
+        print("aqui");
+      }
+  
+    } catch (e) {
+      print(e);
+    }
+  }
+
   createLovedOne(context) {
     Provider.of<EntesProvider>(context, listen: false).put(
       EntesQueridos(
@@ -54,7 +75,7 @@ class _CreateDearOneBoxState extends State<CreateDearOneBox> {
           nome: name,
           idade: age,
           telefone: phone,
-          imagem: ''),
+          imagem: image),
     );
 
     Navigator.of(context).pop();
@@ -104,7 +125,9 @@ class _CreateDearOneBoxState extends State<CreateDearOneBox> {
                       },
                       text: "Sobre a Pessoa"),
                   SizedBox(height: 8),
-                  BlueButton("Adicionar Foto", () {}),
+                  BlueButton("Adicionar Foto", () {
+                    getImageGalery();
+                  }),
                   SizedBox(height: 16),
                   BlueButton("Criar Ente", () {
                     showDialog(

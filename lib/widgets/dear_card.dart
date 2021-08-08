@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:help_rem/models/EntesQueridos.dart';
+import 'package:image_picker/image_picker.dart';
 
 class DearCard extends StatelessWidget {
   final EntesQueridos ente;
@@ -24,7 +27,8 @@ class DearCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CircleAvatar(
-                      backgroundImage: NetworkImage(ente.imagem),
+                      // backgroundImage: FileImage(ente.imagem) ,
+                      child: Image.file(File(ente.imagem!.path)),
                       radius: 45,
                     ),
                     Column(
@@ -40,7 +44,8 @@ class DearCard extends StatelessWidget {
                           "Parentesco: ${ente.parentesco}",
                           style: TextStyle(fontSize: 20),
                         ),
-                        Text("Idade: ${ente.idade}", style: TextStyle(fontSize: 20)),
+                        Text("Idade: ${ente.idade}",
+                            style: TextStyle(fontSize: 20)),
                         Text("Telefone: ${ente.telefone}",
                             style: TextStyle(fontSize: 20)),
                       ],

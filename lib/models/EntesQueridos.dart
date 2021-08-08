@@ -1,18 +1,23 @@
+import 'dart:io';
+
+import 'package:image_picker/image_picker.dart';
+
 class EntesQueridos {
   final String id;
   final String parentesco;
   final String nome;
   final int idade;
   final String telefone;
-  final String imagem;
+  final XFile? imagem;
 
-  const EntesQueridos(
-      {required this.id,
-      required this.parentesco,
-      required this.nome,
-      required this.idade,
-      required this.telefone,
-      required this.imagem});
+  const EntesQueridos({
+    required this.id,
+    required this.parentesco,
+    required this.nome,
+    required this.idade,
+    required this.telefone,
+    this.imagem,
+  });
 
   Map<String, dynamic> toMap() {
     return {
