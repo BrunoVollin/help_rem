@@ -26,10 +26,16 @@ class DearCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      // backgroundImage: FileImage(ente.imagem) ,
-                      child: Image.file(File(ente.imagem!.path)),
-                      radius: 45,
+                    Container(
+                      width: 100,
+                      height: 100,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.file(
+                          File(ente.imagem!.path),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
