@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:help_rem/provider/entesprovider.dart';
 import 'package:help_rem/theme/blue.dart';
 import 'package:help_rem/views/create_account_page.dart';
-import 'package:help_rem/views/create_food.dart';
+import 'package:help_rem/views/food_create.dart';
 import 'package:help_rem/views/dear_one_create.dart';
 import 'package:help_rem/views/dear_one_list.dart';
 import 'package:help_rem/views/dear_one_specific.dart';
+import 'package:help_rem/views/food_especific.dart';
 import 'package:help_rem/views/food_page.dart';
 import 'package:help_rem/views/login_page.dart';
 import 'package:help_rem/views/medicine_page.dart';
@@ -27,7 +28,7 @@ class Routes extends StatelessWidget {
           ChangeNotifierProvider(
             create: (context) => EntesProvider(),
           )
-        ],  
+        ],
         child: MaterialApp(
             theme: themeData,
             debugShowCheckedModeBanner: false,
@@ -42,6 +43,7 @@ class Routes extends StatelessWidget {
               '/create_medicine': (context) => CreateMedicine(),
               '/food_page': (context) => FoodPage(),
               '/create_food': (context) => CreateFood(),
+              '/food_especific': (context) => FoodSpecific(),
               '/physical_activity_page': (context) => PhysicalActivity(),
               '/physical_activity_create': (context) =>
                   PhysicalActivityCreate(),

@@ -1,10 +1,12 @@
-class Alimento {
-  final int id;
-  final String nome;
-  final bool pode;
-  final String imagem;
+import 'package:image_picker/image_picker.dart';
 
-  Alimento(
+class Alimento {
+  final String id;
+  final String nome;
+  final String pode;
+  final XFile? imagem;
+
+  const Alimento(
       {required this.id,
       required this.nome,
       required this.pode,

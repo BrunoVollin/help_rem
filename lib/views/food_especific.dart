@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class FoodSpecific extends StatelessWidget {
   final String name = "Brocolis";
   final String pode = "Sim";
-  final String image = "encurtador.com.br/fgRS2";
+  final String image = "https://img.itdg.com.br/tdg/images/blog/uploads/2019/09/como-cozinhar-brocolis.jpg";
 
   @override
   Widget build(BuildContext context) {
