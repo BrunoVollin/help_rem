@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:help_rem/models/Alimento.dart';
 
 class FoodCard extends StatelessWidget {
-  String image = 'encurtador.com.br/fgRS2';
-  String cardTitle = "Brocolis";
-  String pode = 'Sim';
+  final Alimento food;
+
+  const FoodCard(this.food);
 
   @override
   Widget build(BuildContext context) {
@@ -22,24 +25,30 @@ class FoodCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(image),
-                      radius: 45,
+                    Container(
+                      width: 100,
+                      height: 100,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.file(
+                          File(food.imagem!.path),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          cardTitle,
+                          food.nome,
                           style:
                               TextStyle(color: Color(0xFF4B98B5), fontSize: 30),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          "Nome: $cardTitle",
+                          "Pode: ${food.pode}",
                           style: TextStyle(fontSize: 20),
-                        ),
-                        Text("Pode: $pode", style: TextStyle(fontSize: 20)),
+                        )
                       ],
                     )
                   ],
