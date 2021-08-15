@@ -29,19 +29,11 @@ class PhysicalActivity extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        color: Color(0xffE1E1E1),
-        child: ListView(
-          children: [
-            SizedBox(height: 5),
-            PhysicalActivityCard(),
-            PhysicalActivityCard(),
-            PhysicalActivityCard(),
-            PhysicalActivityCard(),
-            PhysicalActivityCard(),
-          ],
-        ),
-      ),
+     body: Container(
+          color: Color(0xffE1E1E1),
+          child: ListView.builder(
+              itemCount: activity.count,
+              itemBuilder: (ctx, i) => PhysicalActivityCard(activity.byIndex(i)))),
     );
   }
 }

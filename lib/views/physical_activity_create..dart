@@ -4,6 +4,7 @@ import 'package:help_rem/provider/physical_activityprovider.dart';
 import 'package:help_rem/widgets/blue_button.dart';
 import 'package:help_rem/widgets/blue_text_field.dart';
 import 'package:help_rem/widgets/blue_text_field_multiline.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class CreatePhysicalActivity extends StatelessWidget {
@@ -43,10 +44,33 @@ class _PhysicalActivityCreateBoxState extends State<PhysicalActivityCreateBox> {
 
   String name = "";
   String descrition = "";
+  String time = "";
+
+  XFile? image;
+
+  void getImageGalery() async {
+    final picker = ImagePicker();
+
+    try {
+      // ignore: deprecated_member_use
+      XFile? file = await picker.pickImage(source: ImageSource.gallery);
+      if (file != null) {
+        setState(() => image = file);
+        print("aqui");
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 
   createPhysicalActivity(context) {
     Provider.of<PhysicalProvider>(context, listen: false).put(
-      Atividade(id: '1', nome: 'name', descricao: 'descrition'),
+      Atividade(
+          id: '1',
+          nome: 'name',
+          descricao: 'descrition',
+          horario: 'time',
+          imagem: image),
     );
 
     Navigator.of(context).pop();
@@ -66,13 +90,52 @@ class _PhysicalActivityCreateBoxState extends State<PhysicalActivityCreateBox> {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
-                  BlueTextField(onChange: () {}, text: "Nome"),
+                  BlueTextField(
+                      onChange: (info) {
+                        name = info;
+                      },
+                      text: "Nome"),
                   SizedBox(height: 8),
-                  BlueTextField(onChange: () {}, text: "Horario"),
+                  BlueTextField(
+                      onChange: (info) {
+                        time = info;
+                      },
+                      text: "Horario"),
                   SizedBox(height: 8),
-                  BlueTextFieldMultiline(onChange: () {}, text: "Descrição"),
+                  BlueTextFieldMultiline(
+                      onChange: (info) {
+                        descrition = info;
+                      },
+                      text: "Descrição"),
                   SizedBox(height: 8),
-                  BlueButton("Criar Atividade", () {})
+                  BlueButton("Adicionar Foto", () {
+                    getImageGalery();
+                  }),
+                  SizedBox(height: 16),
+                  BlueButton("Criar Atividade", () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: Text("Alerta"),
+                        content: Text("Deseja adicionar o atividade?"),
+                        actions: [
+                          TextButton(
+                            child: Text("OK"),
+                            onPressed: () {
+                              createPhysicalActivity(context);
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                          TextButton(
+                            child: Text("Cancelar"),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          )
+                        ],
+                      ),
+                    );
+                  })
                 ],
               ),
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_rem/provider/entesprovider.dart';
 import 'package:help_rem/provider/foodprovider.dart';
+import 'package:help_rem/provider/physical_activityprovider.dart';
 import 'package:help_rem/theme/blue.dart';
 import 'package:help_rem/views/create_account_page.dart';
 import 'package:help_rem/views/food_create.dart';
@@ -31,6 +32,9 @@ class Routes extends StatelessWidget {
           ),
           ChangeNotifierProvider(
             create: (context) => FoodProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => PhysicalProvider(),
           )
         ],
         child: MaterialApp(
@@ -49,8 +53,7 @@ class Routes extends StatelessWidget {
               '/create_food': (context) => CreateFood(),
               '/food_especific': (context) => FoodSpecific(),
               '/physical_activity_page': (context) => PhysicalActivity(),
-              '/physical_activity_create': (context) =>
-                  PhysicalActivityCreate(),
+              '/physical_activity_create': (context) => CreatePhysicalActivity()
             }));
   }
 }

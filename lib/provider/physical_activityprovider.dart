@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:help_rem/data/dummy_activity.dart';
 import 'package:help_rem/models/Atividade.dart';
 
-
 class PhysicalProvider with ChangeNotifier {
   final Map<String, Atividade> _items = {...DUMMY_ACTIVITY};
 
@@ -30,16 +29,20 @@ class PhysicalProvider with ChangeNotifier {
     } else {
       final id = Random().nextDouble().toString();
       _items.putIfAbsent(
-        id,
-        () => Atividade(id: id, nome: activity.nome, descricao: activity.descricao)
-      );
+          id,
+          () => Atividade(
+              horario: activity.horario,
+              imagem: activity.imagem,
+              id: id,
+              nome: activity.nome,
+              descricao: activity.descricao));
     }
 
     notifyListeners();
   }
 
   void remove(String id) {
-    if(id != null) {
+    if (id != null) {
       _items.remove(id);
       notifyListeners();
     }
