@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:help_rem/provider/foodprovider.dart';
 import 'package:help_rem/widgets/food_card.dart';

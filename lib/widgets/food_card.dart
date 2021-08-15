@@ -11,9 +11,9 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).pushNamed('/food_specific');
-      },
+      // onTap: () {
+      //   // Navigator.of(context).pushNamed('/food_specific');
+      // },
       child: Center(
         child: Container(
           child: Padding(
