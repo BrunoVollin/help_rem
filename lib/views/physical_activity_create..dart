@@ -67,9 +67,9 @@ class _PhysicalActivityCreateBoxState extends State<PhysicalActivityCreateBox> {
     Provider.of<PhysicalProvider>(context, listen: false).put(
       Atividade(
           id: '1',
-          nome: 'name',
-          descricao: 'descrition',
-          horario: 'time',
+          nome: name,
+          descricao: descrition,
+          horario: time,
           imagem: image),
     );
 
