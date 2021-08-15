@@ -6,7 +6,7 @@ import 'package:help_rem/widgets/blue_text_field.dart';
 import 'package:help_rem/widgets/blue_text_field_multiline.dart';
 import 'package:provider/provider.dart';
 
-class PhysicalActivityCreate extends StatelessWidget {
+class CreatePhysicalActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,15 +42,17 @@ class _CreatePhysicalBoxState extends State<CreatePhysicalBox> {
 
   String name = "";
   String descrition = "";
-}
 
-CreatePhysicalBox(context) {
+  createPhysicalActivity(context) {
   Provider.of<PhysicalProvider>(context, listen: false).put(
-    Atividade(id: 1, nome: 'name', descricao: 'descrition'),
+    Atividade(id: '1', nome: 'name', descricao: 'descrition'),
   );
 
   Navigator.of(context).pop();
+  } 
 }
+
+
 
 class PhysicalActivityCreateBox extends StatelessWidget {
   @override
