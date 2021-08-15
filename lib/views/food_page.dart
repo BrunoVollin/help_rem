@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:help_rem/provider/foodprovider.dart';
 import 'package:help_rem/widgets/food_card.dart';
@@ -7,7 +6,6 @@ import 'package:provider/provider.dart';
 class FoodPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     final FoodProvider food = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
@@ -30,12 +28,11 @@ class FoodPage extends StatelessWidget {
           ),
         ),
       ),
-       body: Container(
-        color: Color(0xffE1E1E1),
-        child: ListView.builder(
-            itemCount: food.count,
-            itemBuilder: (ctx, i) => FoodCard(food.byIndex(i)))
-      ),
+      body: Container(
+          color: Color(0xffE1E1E1),
+          child: ListView.builder(
+              itemCount: food.count,
+              itemBuilder: (ctx, i) => FoodCard(food.byIndex(i)))),
     );
   }
 }

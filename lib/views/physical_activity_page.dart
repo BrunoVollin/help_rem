@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:help_rem/widgets/dear_card.dart';
+import 'package:help_rem/provider/physical_activityprovider.dart';
 import 'package:help_rem/widgets/physical_activity_card.dart';
+import 'package:provider/provider.dart';
 
 class PhysicalActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final PhysicalProvider activity = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -20,7 +22,7 @@ class PhysicalActivity extends StatelessWidget {
               icon: Icon(Icons.add, size: 40, color: Color(0xff4B98B5)))
         ],
         title: Text(
-          "Entes Queridoss",
+          "Atividades Fisicas",
           style: TextStyle(
             color: Color(0xff4B98B5),
             fontSize: 30,

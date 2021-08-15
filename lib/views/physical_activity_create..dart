@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:help_rem/models/Atividade.dart';
+import 'package:help_rem/provider/physical_activityprovider.dart';
 import 'package:help_rem/widgets/blue_button.dart';
 import 'package:help_rem/widgets/blue_text_field.dart';
 import 'package:help_rem/widgets/blue_text_field_multiline.dart';
+import 'package:provider/provider.dart';
 
 class PhysicalActivityCreate extends StatelessWidget {
   @override
@@ -23,10 +26,30 @@ class PhysicalActivityCreate extends StatelessWidget {
             ),
           ),
         ),
-        body: PhysicalActivityCreateBox(),
+        body: CreatePhysicalBox(),
       ),
     );
   }
+}
+
+class CreatePhysicalBox extends StatefulWidget {
+  @override
+  _CreatePhysicalBoxState createState() => _CreatePhysicalBoxState();
+}
+
+class _CreatePhysicalBoxState extends State<CreatePhysicalBox> {
+  late Atividade activity;
+
+  String name = "";
+  String descrition = "";
+}
+
+CreatePhysicalBox(context) {
+  Provider.of<PhysicalProvider>(context, listen: false).put(
+    Atividade(id: 1, nome: 'name', descricao: 'descrition'),
+  );
+
+  Navigator.of(context).pop();
 }
 
 class PhysicalActivityCreateBox extends StatelessWidget {
@@ -59,4 +82,10 @@ class PhysicalActivityCreateBox extends StatelessWidget {
       ),
     );
   }
+}
+
+@override
+Widget build(BuildContext context) {
+  // TODO: implement build
+  throw UnimplementedError();
 }
