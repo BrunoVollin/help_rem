@@ -26,35 +26,32 @@ class CreatePhysicalActivity extends StatelessWidget {
             ),
           ),
         ),
-        body: CreatePhysicalBox(),
+        body: PhysicalActivityCreateBox(),
       ),
     );
   }
 }
 
-class CreatePhysicalBox extends StatefulWidget {
+class PhysicalActivityCreateBox extends StatefulWidget {
   @override
-  _CreatePhysicalBoxState createState() => _CreatePhysicalBoxState();
+  _PhysicalActivityCreateBoxState createState() =>
+      _PhysicalActivityCreateBoxState();
 }
 
-class _CreatePhysicalBoxState extends State<CreatePhysicalBox> {
+class _PhysicalActivityCreateBoxState extends State<PhysicalActivityCreateBox> {
   late Atividade activity;
 
   String name = "";
   String descrition = "";
 
   createPhysicalActivity(context) {
-  Provider.of<PhysicalProvider>(context, listen: false).put(
-    Atividade(id: '1', nome: 'name', descricao: 'descrition'),
-  );
+    Provider.of<PhysicalProvider>(context, listen: false).put(
+      Atividade(id: '1', nome: 'name', descricao: 'descrition'),
+    );
 
-  Navigator.of(context).pop();
-  } 
-}
+    Navigator.of(context).pop();
+  }
 
-
-
-class PhysicalActivityCreateBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -84,10 +81,4 @@ class PhysicalActivityCreateBox extends StatelessWidget {
       ),
     );
   }
-}
-
-@override
-Widget build(BuildContext context) {
-  // TODO: implement build
-  throw UnimplementedError();
 }

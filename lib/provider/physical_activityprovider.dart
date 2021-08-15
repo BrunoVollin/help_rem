@@ -29,11 +29,9 @@ class PhysicalProvider with ChangeNotifier {
       _items.update(activity.id, (_) => activity);
     } else {
       final id = Random().nextDouble().toString();
-
       _items.putIfAbsent(
         id,
         () => Atividade(id: id, nome: activity.nome, descricao: activity.descricao)
-        
       );
     }
 
