@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_rem/provider/entesprovider.dart';
 import 'package:help_rem/provider/foodprovider.dart';
+import 'package:help_rem/provider/medicineprovider.dart';
 import 'package:help_rem/theme/blue.dart';
 import 'package:help_rem/views/create_account_page.dart';
 import 'package:help_rem/views/food_create.dart';
@@ -31,6 +32,9 @@ class Routes extends StatelessWidget {
           ),
           ChangeNotifierProvider(
             create: (context) => FoodProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => MedicineProvider(),
           )
         ],
         child: MaterialApp(

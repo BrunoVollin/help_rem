@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:help_rem/data/dummy_entes.dart';
 import 'package:help_rem/models/EntesQueridos.dart';

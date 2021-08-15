@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:help_rem/provider/medicineprovider.dart';
 import 'package:help_rem/widgets/dear_card.dart';
 import 'package:help_rem/widgets/medicine_card.dart';
+import 'package:provider/provider.dart';
 
 class MedicinePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final MedicineProvider medicine = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -29,16 +32,9 @@ class MedicinePage extends StatelessWidget {
       ),
       body: Container(
         color: Color(0xffE1E1E1),
-        child: ListView(
-          children: [
-            SizedBox(height: 5),
-            MedicineCard(),
-            MedicineCard(),
-            MedicineCard(),
-            MedicineCard(),
-            MedicineCard(),
-          ],
-        ),
+        child: ListView.builder(
+            itemCount: medicine.count,
+            itemBuilder: (ctx, i) => MedicineCard(medicine.byIndex(i))),
       ),
     );
   }
