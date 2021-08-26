@@ -1,12 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:help_rem/models/Remedio.dart';
+import 'package:image_picker/image_picker.dart';
 
 class MedicineCard extends StatelessWidget {
-  String image =
-      'https://img.drogaraia.com.br/catalog/product/3/7/37638.jpg?width=520&height=520&quality=50&type=resize';
+  final Remedio medicine;
 
-  String name = "Doralgina";
-  String time = " Todo dia 13h";
-  String amount = "1 comprimido";
+  const MedicineCard(this.medicine);
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +23,28 @@ class MedicineCard extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(image),
-                      radius: 70,
+                    Container(
+                      width: 100,
+                      height: 100,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.file(
+                          File(medicine.imagem!.path),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
                     Text(
-                      name,
+                      medicine.nome,
                       style: TextStyle(color: Color(0xFF4B98B5), fontSize: 30),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(height: 20),
-                        Text("Horario: $time", style: TextStyle(fontSize: 20)),
-                        Text("Quantidade: $amount",
+                        Text("Horario: ${medicine.horario}",
+                            style: TextStyle(fontSize: 20)),
+                        Text("Quantidade: ${medicine.quantidade}",
                             style: TextStyle(fontSize: 20)),
                       ],
                     )

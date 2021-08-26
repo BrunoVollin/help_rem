@@ -1,14 +1,19 @@
+import 'package:image_picker/image_picker.dart';
+
 class Remedio {
-  final int id;
+  final String id;
   final String nome;
   final String horario;
   final int quantidade;
+  final XFile? imagem;
 
-  Remedio(
-      {required this.id,
-      required this.nome,
-      required this.horario,
-      required this.quantidade});
+  const Remedio({
+    required this.id,
+    required this.nome,
+    required this.horario,
+    required this.quantidade,
+    this.imagem,
+  });
 
   Map<String, dynamic> toMap() {
     return {

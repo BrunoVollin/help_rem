@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_rem/provider/entesprovider.dart';
 import 'package:help_rem/provider/foodprovider.dart';
+import 'package:help_rem/provider/medicineprovider.dart';
 import 'package:help_rem/provider/physical_activityprovider.dart';
 import 'package:help_rem/theme/blue.dart';
 import 'package:help_rem/views/create_account_page.dart';
@@ -26,34 +27,39 @@ class Routes extends StatelessWidget {
     );
 
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => EntesProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => FoodProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => PhysicalProvider(),
-          )
-        ],
-        child: MaterialApp(
-            theme: themeData,
-            debugShowCheckedModeBanner: false,
-            initialRoute: '/',
-            routes: {
-              '/': (context) => MenuPage(),
-              '/dear_one_list': (context) => DearOneList(),
-              '/dear_one_specific': (context) => DearOneSpecific(),
-              '/create_account_page': (context) => CreateAccount(),
-              '/create_dear_one': (context) => CreateDearOne(),
-              '/medicine_page': (context) => MedicinePage(),
-              '/create_medicine': (context) => CreateMedicine(),
-              '/food_page': (context) => FoodPage(),
-              '/create_food': (context) => CreateFood(),
-              '/food_especific': (context) => FoodSpecific(),
-              '/physical_activity_page': (context) => PhysicalActivity(),
-              '/physical_activity_create': (context) => CreatePhysicalActivity()
-            }));
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => EntesProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => FoodProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PhysicalProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => MedicineProvider(),
+        )
+      ],
+      child: MaterialApp(
+        theme: themeData,
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => MenuPage(),
+          '/dear_one_list': (context) => DearOneList(),
+          '/dear_one_specific': (context) => DearOneSpecific(),
+          '/create_account_page': (context) => CreateAccount(),
+          '/create_dear_one': (context) => CreateDearOne(),
+          '/medicine_page': (context) => MedicinePage(),
+          '/create_medicine': (context) => CreateMedicine(),
+          '/food_page': (context) => FoodPage(),
+          '/create_food': (context) => CreateFood(),
+          '/food_especific': (context) => FoodSpecific(),
+          '/physical_activity_page': (context) => PhysicalActivity(),
+          '/physical_activity_create': (context) => CreatePhysicalActivity()
+        },
+      ),
+    );
   }
 }
