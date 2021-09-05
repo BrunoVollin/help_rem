@@ -4,7 +4,7 @@ class Remedio {
   final String id;
   final String nome;
   final String horario;
-  final int quantidade;
+  final String quantidade;
   final XFile? imagem;
 
   const Remedio({

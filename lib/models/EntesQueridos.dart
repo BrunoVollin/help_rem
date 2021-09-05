@@ -6,7 +6,7 @@ class EntesQueridos {
   final String id;
   final String parentesco;
   final String nome;
-  final int idade;
+  final String idade;
   final String telefone;
   final XFile? imagem;
 

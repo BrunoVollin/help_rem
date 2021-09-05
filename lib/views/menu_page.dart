@@ -37,12 +37,10 @@ class MenuPageBox extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Text(
-                      "Bem Vindo",
-                      style: TextStyle(fontSize: 30, color: Colors.black54),
-                    ),
+                  Container(
+                    width: 200,
+                    height: 100,
+                    child: Image.asset("assets/logo.jpg"),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),

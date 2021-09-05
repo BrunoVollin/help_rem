@@ -43,7 +43,7 @@ class _CreateMedicineBoxState extends State<CreateMedicineBox> {
 
   String nome = "";
   String horario = "";
-  int quantidade = 0;
+  String quantidade = "";
 
   XFile? image;
 

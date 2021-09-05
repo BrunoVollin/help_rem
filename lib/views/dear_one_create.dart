@@ -47,7 +47,7 @@ class _CreateDearOneBoxState extends State<CreateDearOneBox> {
   String phone = "";
   String kinship = "";
   String about = "";
-  int age = 0;
+  String age = "0";
 
   XFile? image;
 

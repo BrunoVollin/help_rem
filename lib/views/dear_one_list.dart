@@ -26,7 +26,7 @@ class DearOneList extends StatelessWidget {
               icon: Icon(Icons.add, size: 40, color: Color(0xff4B98B5)))
         ],
         title: Text(
-          "Entes Queridoss",
+          "Entes Queridos",
           style: TextStyle(
             color: Color(0xff4B98B5),
             fontSize: 30,
