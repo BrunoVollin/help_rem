@@ -48,6 +48,7 @@ class _CreateDearOneBoxState extends State<CreateDearOneBox> {
   String kinship = "";
   String about = "";
   String age = "0";
+  String sobre = "0";
 
   XFile? image;
 
@@ -75,7 +76,9 @@ class _CreateDearOneBoxState extends State<CreateDearOneBox> {
           nome: name,
           idade: age,
           telefone: phone,
-          imagem: image),
+          imagem: image,
+          about: sobre,
+          ),
     );
 
     Navigator.of(context).pop();
@@ -121,7 +124,7 @@ class _CreateDearOneBoxState extends State<CreateDearOneBox> {
                   SizedBox(height: 8),
                   BlueTextFieldMultiline(
                       onChange: (info) {
-                        about = info;
+                        sobre = info;
                       },
                       text: "Sobre a Pessoa"),
                   SizedBox(height: 8),

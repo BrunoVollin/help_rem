@@ -8,6 +8,7 @@ class EntesQueridos {
   final String nome;
   final String idade;
   final String telefone;
+  final String about;
   final XFile? imagem;
 
   const EntesQueridos({
@@ -16,6 +17,7 @@ class EntesQueridos {
     required this.nome,
     required this.idade,
     required this.telefone,
+    required this.about,
     this.imagem,
   });
 

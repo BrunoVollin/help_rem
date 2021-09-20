@@ -39,6 +39,7 @@ class EntesProvider with ChangeNotifier {
           idade: ente.idade,
           telefone: ente.telefone,
           imagem: ente.imagem,
+          about: ente.about,
         ),
       );
     }
