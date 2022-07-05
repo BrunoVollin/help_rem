@@ -37,12 +37,12 @@
 
 ## Interface do usuário 🎨
 
-
+As fontes são propositalmente grandes e as cores são escolhidas para que o usuário possa entender melhor o projeto seguindo as principais protocolos das organizações de saúde. 
 <p align="center">
    <img  width="300" src="https://user-images.githubusercontent.com/61352086/177396152-72595aa8-f6e5-4bfc-a14e-7f52cc38b228.png" alt="...">
 </p>
 
-As fontes são propositalmente grandes e as cores são escolhidas para que o usuário possa entender melhor o projeto seguindo as principais protocolos das organizações de saúde. 
+
 
 
 
